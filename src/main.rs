@@ -34,4 +34,40 @@ fn main() {
     let is_zero_remainder: bool = 10 % 4 != 0;
     println!("is_zero_remainder is {}", is_zero_remainder);
 
+    let my_char: char = 'z';
+    println!("my_char is {}", my_char);
+
+    let emoji_char: char = '😎';
+    println!("emoji_char is {}", emoji_char);
+
+    let my_floats: [f32; 10] = [0.0; 10];
+    println!("my_floats is {:?}", my_floats);
+
+    let my_floats_new: [f32; 10] = my_floats.map(|n| n + 2.0);
+    println!("my_floats_new is {:?}", my_floats_new);
+
+    let name: &str = "Jeric";
+    println!("name is {:?}", name);
+
+    let dynamic_name: String = String::from("Jeric Codings");
+    println!("dynamic_name is {:?}", dynamic_name);
+    println!("my dynamic_name stored in memory {:p}", &dynamic_name);
+
+    let str_slice: &str = &dynamic_name[0..5];
+    println!("str_slice is {:?}", str_slice);
+
+    let mut chars: Vec<char> = Vec::new();
+    chars.insert(0, 'h');
+    chars.insert(1, 'e');
+    chars.insert(2, 'l');
+    chars.push('l');
+    chars.push('o');
+    chars.push('.');
+    println!("chars is {:?}", chars);
+    dbg!(&chars);
+
+    let removed_char: char = chars.pop().unwrap();
+    println!("removed_char is {:?}", removed_char);
+    println!("chars is {:?}", chars);
+
 }

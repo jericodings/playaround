@@ -92,7 +92,7 @@ fn main() {
     let new_num: i32 = add_num(7);
     dbg!(new_num);
 
-    Number Literals (from Rust Book)
+    // Number Literals (from Rust Book)
     println!("Big Number is {}", 98_222_000);
     println!("Hex is {}", 0xff);
     println!("Octal is {}", 0o77);

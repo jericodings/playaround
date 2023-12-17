@@ -1,3 +1,6 @@
+mod m1_enums;
+mod m2_structs;
+mod m3_traits;
 
 const OUR_COURSE: &str = "Rust with AutoGPT";
 

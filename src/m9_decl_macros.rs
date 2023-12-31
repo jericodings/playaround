@@ -47,9 +47,26 @@ mod tests {
         }
     }
     
+   
+  macro_rules! my_vec {
+    ( $($x: expr),+ ) => {
+      {
+        let mut temp_vec = Vec::new();
+        $(
+          temp_vec.push($x);
+        )+
+        temp_vec
+      }
+    }
+  }
+
     
   #[test]
   fn tests_declarative_macro() {
+
+    let mut _x: Vec<i32> = vec!();
+    let y: Vec<i32> = my_vec!(1);
+    dbg!(y);    
 
     let some_var: String = mad_skills!(u8);
     dbg!(some_var);

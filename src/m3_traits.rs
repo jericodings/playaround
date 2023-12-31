@@ -1,15 +1,18 @@
-trait Attacker {
+#[cfg(test)]
+mod test {
+  trait Attacker {
     fn choose_style(&self) -> String;
-}
-
-#[derive(Debug)]
-enum Character {
-  Warrior,
-  Archer,
-  Wizard
-}
+  }
   
-impl Attacker for Character {
+  #[derive(Debug)]
+  #[allow(dead_code)]
+  enum Character {
+    Warrior,
+    Archer,
+    Wizard
+  }
+  
+  impl Attacker for Character {
     fn choose_style(&self) -> String {
       match self {
         Character::Warrior => "wing chun".to_string(),
@@ -18,10 +21,6 @@ impl Attacker for Character {
       }
     }
   }  
-
-#[cfg(test)]
-mod test {
-    use super::*;
 
   #[test]
   fn tests_traits() {

@@ -1,44 +1,43 @@
-#[derive(Debug)]
-enum Message {
-  Quit,
-  ChangeColour(i32, i32, i32),
-  Move { x: i32, y: i32 },
-  Write(String)
-}
-  
-fn process_message(msg: Message) {
-  match msg {
-    Message::Quit => {
-      println!("I quit!");
-    },
-    Message::ChangeColour(red, green, blue) => {
-      println!("Red {}, Green {}, Blue {}", red, green, blue);
-    },
-    Message::Move { x, y: new_name } => {
-      println!("X is {}, Y as new_name is {}", x, new_name);
-    }
-    Message::Write(text) => {
-      println!("{}", text);
-    }
-  };
-}
-
 #[cfg(test)]
 mod test {
-    use super::*;
 
-    #[test]
-    fn tests_large_enum() {
-      let my_quit: Message = Message::Quit;
-      let my_colour: Message = Message::ChangeColour(10, 20, 255);
-      let my_move: Message = Message::Move { x: 10, y: 200 };
-      let my_write: Message = Message::Write("My awesome string".to_string());
-      process_message(my_write);     
-    }
+  #[derive(Debug)]
+  enum Message {
+    Quit,
+    ChangeColour(i32, i32, i32),
+    Move { x: i32, y: i32 },
+    Write(String)
+  }
+  
+  fn process_message(msg: Message) {
+    match msg {
+      Message::Quit => {
+        println!("I quit!");
+      },
+      Message::ChangeColour(red, green, blue) => {
+        println!("Red {}, Green {}, Blue {}", red, green, blue);
+      },
+      Message::Move { x, y: new_name } => {
+        println!("X is {}, Y as new_name is {}", x, new_name);
+      }
+      Message::Write(text) => {
+        println!("{}", text);
+      }
+    };
+  }
+
+  #[test]
+  fn tests_large_enum() {
+    let _my_quit: Message = Message::Quit;
+    let _my_colour: Message = Message::ChangeColour(10, 20, 255);
+    let _my_move: Message = Message::Move { x: 10, y: 200 };
+    let my_write: Message = Message::Write("My awesome string".to_string());
+    process_message(my_write);
+  }
 
   #[test]
   fn tests_match_literals() {
-      
+    
     let number: i32 = 20;
 
     let res: &str = match number {
@@ -56,7 +55,7 @@ mod test {
     let some_num: Option<i32> = Some(10);
 
     let my_int: i32 = if let Some(i) = some_num {
-    i
+      i
     } else {
       panic!("There was a problem");
     };
@@ -72,14 +71,14 @@ mod test {
 
     // println!("{:?}", some_num);
     // println!("{}", res);
-  
   }
+
 
   #[test]
   fn tests_match_result() {
 
     let some_res: Result<i32, &str> = Ok(50);
-    let some_err: Result<i32, &str> = Err("There was a problem");
+    let _some_err: Result<i32, &str> = Err("There was a problem");
 
     let res = match some_res {
       Ok(val) => val,
@@ -90,10 +89,10 @@ mod test {
 
     let my_int: i32 = if let Ok(r) = some_res {
       r
-      } else {
-        panic!("There was a problem");
-      };
-    
+    } else {
+      panic!("There was a problem");
+    };
+
     println!("{}", my_int);
   }
 

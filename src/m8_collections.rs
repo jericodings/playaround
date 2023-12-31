@@ -1,8 +1,6 @@
-use std::collections::{HashMap, HashSet};
-
 #[cfg(test)]
 mod test {
-    use super::*;
+  use std::collections::{HashMap, HashSet};
 
   #[test]
   fn tests_hashmap() {
@@ -22,8 +20,8 @@ mod test {
     dbg!(test_score.unwrap());
 
     if results_hm.contains_key("alice") {
-        dbg!("Alice is present!");
-      }
+      dbg!("Alice is present!");
+    }
   }
 
   #[test]

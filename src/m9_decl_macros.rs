@@ -51,7 +51,7 @@ mod tests {
   #[test]
   fn tests_declarative_macro() {
 
-    let some_var: String = mad_skills!(i32);
+    let some_var: String = mad_skills!(u8);
     dbg!(some_var);
 
   }

@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
-
-
+  use std::rc::{Rc, Weak};
+  use std::cell::RefCell;
 
 
 
@@ -31,6 +31,14 @@ mod tests {
   #[allow(dead_code, unused_variables)]
   fn tests_reference_counter() {
 
+    let x = Rc::new(RefCell::new(50));
+    let y = Rc::clone(&x);
+    let z = Rc::clone(&x);
+
+    *x.borrow_mut() = 70;
+
+    dbg!(x.borrow());    
+    dbg!(y.borrow());
 
   }
 }

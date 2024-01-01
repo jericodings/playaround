@@ -3,8 +3,6 @@ mod tests {
   use std::rc::{Rc, Weak};
   use std::cell::RefCell;
 
-
-
   #[test]
   #[allow(dead_code, unused_variables)]
   fn tests_box_smart_pointer() {

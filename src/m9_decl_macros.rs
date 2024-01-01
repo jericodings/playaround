@@ -34,6 +34,8 @@
 #[cfg(test)]
 mod tests {
   
+// To enable a macro to be used in other files if the crate containing your macro is imported, add this above your macro:
+// #[macro_export]
 
     macro_rules! mad_skills {
         // ($x: expr) => {
